@@ -1,0 +1,7 @@
+{
+    "files.exclude": {
+        "*.a": true,
+        "*.o": true
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}
