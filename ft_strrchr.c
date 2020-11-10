@@ -6,27 +6,26 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 15:05:00 by wlakita           #+#    #+#             */
-/*   Updated: 2020/10/31 19:33:11 by max              ###   ########.fr       */
+/*   Updated: 2020/11/09 14:32:26 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-
-
-char	*ft_strrchr(char *str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
-	int i;
+	int		i;
+	char	*p;
 
-    i = ft_strlen(str);
-    while (i >= 0)
+	p = (char *)str;
+	i = ft_strlen(str);
+	while (i >= 0)
 	{
-		if (str[i] == c)
-			return (&str[i]);
-        i--;
+		if (p[i] == c)
+			return (&p[i]);
+		i--;
 	}
-	if (str[i] == c)
-		return (&str[i]);
+	if (p[i] == c)
+		return (&p[i]);
 	return (0);
 }

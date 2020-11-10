@@ -6,16 +6,16 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 17:30:31 by max               #+#    #+#             */
-/*   Updated: 2020/11/04 17:50:02 by max              ###   ########.fr       */
+/*   Updated: 2020/11/10 11:37:48 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-    del((*lst)->content);
-    del((*lst)->next);
-    free(*lst);    
-    *lst = NULL;
+	del((*lst)->content);
+	del((*lst)->next);
+	free(*lst);
+	*lst = NULL;
 }

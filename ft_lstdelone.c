@@ -6,15 +6,14 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 12:50:48 by max               #+#    #+#             */
-/*   Updated: 2020/11/04 17:29:06 by max              ###   ########.fr       */
+/*   Updated: 2020/11/10 11:35:54 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-    del(lst->content);
-    free(lst);
-    // ?
+	del(lst->content);
+	free(lst);
 }

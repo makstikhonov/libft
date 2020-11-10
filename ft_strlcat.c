@@ -6,38 +6,28 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 10:34:19 by max               #+#    #+#             */
-/*   Updated: 2020/11/01 13:19:46 by max              ###   ########.fr       */
+/*   Updated: 2020/11/09 12:26:22 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, char *src, size_t dstsize)
+size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
 	size_t i;
-    size_t j;
 	size_t dst_length;
-    size_t src_length;
 
-	i = ft_strlen(dest);
-    j = 0;
-
-    dst_length = ft_strlen(dest);
-    src_length = ft_strlen(src);
-    
-    if (dstsize < dst_length + 1)
-        return(src_length + dstsize);
-    if (dstsize > dst_length + 1)
-    {
-        while (i < dstsize - 1)
-        {
-            dest[i] = src[j];
-            i++;
-            j++;
-        }    
-        dest[i] = '\0';
-        
-    }
-	
-	return (dst_length + src_length);
+	i = 0;
+	while (dest[i] != '\0' && i < dstsize)
+		i++;
+	dst_length = i;
+	i = 0;
+	while ((char)src[i] && (i + dst_length + 1) < dstsize)
+	{
+		dest[i + dst_length] = (char)src[i];
+		i++;
+	}
+	if (dst_length < dstsize)
+		dest[i + dst_length] = '\0';
+	return (dst_length + ft_strlen((char *)src));
 }

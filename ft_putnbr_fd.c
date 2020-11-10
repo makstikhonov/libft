@@ -6,15 +6,14 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 19:23:49 by max               #+#    #+#             */
-/*   Updated: 2020/11/03 19:41:26 by max              ###   ########.fr       */
+/*   Updated: 2020/11/10 11:17:46 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int nb, int fd)
+void	ft_putnbr_fd(int nb, int fd)
 {
-
 	unsigned int i;
 
 	if (nb < 0)
@@ -35,5 +34,4 @@ void ft_putnbr_fd(int nb, int fd)
 	{
 		ft_putchar_fd(i + 48, fd);
 	}
-
 }

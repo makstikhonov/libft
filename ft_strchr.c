@@ -6,37 +6,26 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 15:05:00 by wlakita           #+#    #+#             */
-/*   Updated: 2020/11/02 20:38:52 by max              ###   ########.fr       */
+/*   Updated: 2020/11/09 14:27:13 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-
-
-char	*ft_strchr(char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
-	int i;
-    //int z;
+	int		i;
+	char	*p;
+
+	p = (char *)str;
 	i = 0;
-    
-	//z = ft_strlen(str);
-    while (str[i] != '\0')
-    //while (i < ft_strlen(str))
+	while (p[i] != '\0')
 	{
-		if (str[i] == c)
-			return (&str[i]);
-        i++;
+		if (p[i] == c)
+			return (&p[i]);
+		i++;
 	}
-	if (str[i] == c)
-		return (&str[i]);
+	if (p[i] == c)
+		return (&p[i]);
 	return (0);
 }
-/*
-int main()
-{
-	char str[] = "1236565613";
-	int to_find = 51;
-	printf("%s", ft_strchr(str, to_find));
-}*/

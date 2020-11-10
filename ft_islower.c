@@ -6,13 +6,13 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 19:11:40 by max               #+#    #+#             */
-/*   Updated: 2020/10/29 19:34:20 by max              ###   ########.fr       */
+/*   Updated: 2020/11/09 15:34:50 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-int ft_islower(int c) 
+int	ft_islower(int c)
 {
-    return(c <= 'z' && c >= 'a');
+	return (c <= 'z' && c >= 'a');
 }

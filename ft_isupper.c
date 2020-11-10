@@ -6,13 +6,13 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 19:06:49 by max               #+#    #+#             */
-/*   Updated: 2020/10/29 19:35:01 by max              ###   ########.fr       */
+/*   Updated: 2020/11/09 15:32:50 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-int ft_isupper(int c) 
+int	ft_isupper(int c)
 {
-    return(c <= 'Z' && c >= 'A');
+	return (c <= 'Z' && c >= 'A');
 }
