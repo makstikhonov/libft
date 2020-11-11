@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 17:30:09 by max               #+#    #+#             */
-/*   Updated: 2020/11/10 12:23:21 by max              ###   ########.fr       */
+/*   Updated: 2020/11/10 19:28:17 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*p;
 
+	if (!s || !f)
+		return (NULL);
 	i = 0;
 	if ((p = malloc(sizeof(char) * (ft_strlen(s) + 1))) == NULL)
 		return (NULL);

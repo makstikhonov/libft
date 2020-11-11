@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 18:06:05 by max               #+#    #+#             */
-/*   Updated: 2020/11/09 16:36:03 by max              ###   ########.fr       */
+/*   Updated: 2020/11/10 23:31:00 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 
 	i = 0;
+	if (!s1 || !s2)
+		return (NULL);
 	length1 = ft_strlen(s1);
 	length2 = ft_strlen(s2);
 	length = length1 + length2;

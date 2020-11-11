@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 15:48:56 by max               #+#    #+#             */
-/*   Updated: 2020/11/09 16:16:55 by max              ###   ########.fr       */
+/*   Updated: 2020/11/10 23:32:16 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	if (!ft_strlen(s))
 		return (NULL);
 	length = ft_strlen(s) - start;

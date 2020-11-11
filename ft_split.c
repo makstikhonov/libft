@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 12:46:21 by max               #+#    #+#             */
-/*   Updated: 2020/11/10 14:46:18 by max              ###   ########.fr       */
+/*   Updated: 2020/11/11 12:55:55 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,10 @@ char			**ft_split(char const *st, char c)
 	char	**p;
 	char	*s;
 
-	if (!st[0])
+	if (!st || !c)
 		return (NULL);
-	s = ft_strtrim((char *)st, &c);
+	if ((s = ft_strtrim((char *)st, &c)) == NULL)
+		return (NULL);
 	j = ft_counts_words(s, c);
 	if ((p = (char **)malloc(sizeof(char *) * (j + 1))) == NULL)
 		return (NULL);

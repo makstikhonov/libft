@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 18:53:38 by max               #+#    #+#             */
-/*   Updated: 2020/11/09 16:47:42 by max              ###   ########.fr       */
+/*   Updated: 2020/11/10 23:28:26 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 	size_t	j;
 	size_t	length;
 
+	if (!s1 || !set)
+		return (NULL);
 	if (!ft_strlen(s1) || !ft_strlen(set))
 		return (ft_strdup("\0"));
 	i = 0;

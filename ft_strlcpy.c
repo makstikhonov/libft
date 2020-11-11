@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:49:05 by max               #+#    #+#             */
-/*   Updated: 2020/11/09 12:21:23 by max              ###   ########.fr       */
+/*   Updated: 2020/11/10 23:35:39 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {
 	size_t a;
 
+	if (!dest || !src)
+		return (0);
 	a = 0;
 	if (!dstsize)
 		return (ft_strlen(src));
