@@ -6,20 +6,20 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 18:53:38 by max               #+#    #+#             */
-/*   Updated: 2020/11/10 23:28:26 by max              ###   ########.fr       */
+/*   Updated: 2020/11/12 12:25:02 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_symbol_exist(char s1, char *s2)
+static int	is_symbol_exist(char *s1, char *s2, size_t *i)
 {
 	int j;
 
 	j = 0;
 	while (s2[j])
 	{
-		if (s1 == s2[j])
+		if (s1[*i] == s2[j])
 			return (1);
 		j++;
 	}
@@ -40,15 +40,13 @@ char		*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	length = ft_strlen(s1);
 	j = length - 1;
-	while (is_symbol_exist((char)s1[i], (char *)set))
+	while (is_symbol_exist((char *)s1, (char *)set, &i))
 		i++;
-	while (is_symbol_exist((char)s1[j], (char *)set))
+	while (is_symbol_exist((char *)s1, (char *)set, &j))
 		j--;
 	if (i == length)
 		return (ft_strdup("\0"));
-	if ((p = malloc(sizeof(char) * (j - i + 2))) == NULL)
+	if ((p = ft_substr(s1, i, j - i + 1)) == NULL)
 		return (NULL);
-	p = ft_substr(s1, i, j - i + 1);
-	p[i + j + 2] = '\0';
 	return (p);
 }

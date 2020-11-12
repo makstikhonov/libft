@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:43:53 by wlakita           #+#    #+#             */
-/*   Updated: 2020/11/10 19:17:54 by max              ###   ########.fr       */
+/*   Updated: 2020/11/12 15:22:25 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ char				*ft_strnstr(const char *str,
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *str);
 int					ft_isalpha(int c);
-int					ft_isupper(int c);
-int					ft_islower(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);

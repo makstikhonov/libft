@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 20:27:44 by max               #+#    #+#             */
-/*   Updated: 2020/11/08 18:15:17 by max              ###   ########.fr       */
+/*   Updated: 2020/11/11 16:34:40 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t			i;
-	char			*dst_tmp;
+	unsigned char	*dst_tmp;
 	unsigned char	*src_tmp;
 
 	i = 0;
-	if (dst == NULL || src == NULL)
+	if (dst == NULL && src == NULL)
 		return (NULL);
 	dst_tmp = dst;
 	src_tmp = (unsigned char *)src;

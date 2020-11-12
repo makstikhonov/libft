@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 16:20:16 by max               #+#    #+#             */
-/*   Updated: 2020/11/09 15:58:31 by max              ###   ########.fr       */
+/*   Updated: 2020/11/11 17:13:06 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void *p;
 
-	if (!sizeof(size) || !sizeof(count))
-		return (NULL);
 	if ((p = malloc(size * count)) == NULL)
 		return (NULL);
 	p = ft_memset(p, 0, count * size);

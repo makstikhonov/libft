@@ -6,14 +6,28 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 12:46:21 by max               #+#    #+#             */
-/*   Updated: 2020/11/11 12:55:55 by max              ###   ########.fr       */
+/*   Updated: 2020/11/12 15:40:18 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static size_t	ft_counts_words(char *s, char c)
+static char		**ft_free(char **p, char *s)
+{
+	int i;
+
+	i = 0;
+	while (p[i])
+	{
+		free(p[i]);
+		i++;
+	}
+	free(p);
+	free(s);
+	return (NULL);
+}
+
+static size_t	ft_counts_words(char *s, char *c)
 {
 	size_t i;
 	size_t j;
@@ -22,10 +36,10 @@ static size_t	ft_counts_words(char *s, char c)
 	j = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == *c)
 		{
 			j++;
-			while (s[i] == c)
+			while (s[i] == *c)
 				i++;
 		}
 		i++;
@@ -33,7 +47,7 @@ static size_t	ft_counts_words(char *s, char c)
 	return (j + 1);
 }
 
-static char		**ft_add_to_array(char *s, char **p, char c)
+static char		**ft_add_to_array(char *s, char **p, char *c)
 {
 	size_t	i;
 	size_t	j;
@@ -44,14 +58,13 @@ static char		**ft_add_to_array(char *s, char **p, char c)
 	z = 0;
 	while (i <= ft_strlen(s))
 	{
-		if (s[i] == c || i == ft_strlen(s))
+		if (s[i] == *c || i == ft_strlen(s))
 		{
-			if ((p[z] = (char *)malloc(sizeof(char) * (j + 1))) == NULL)
-				return (NULL);
-			p[z] = ft_substr(s, i - j, j);
+			if ((p[z] = ft_substr(s, i - j, j)) == NULL)
+				return (ft_free(p, s));
 			z++;
 		}
-		while (s[i] == c)
+		while (s[i] == *c)
 		{
 			i++;
 			j = 0;
@@ -59,6 +72,7 @@ static char		**ft_add_to_array(char *s, char **p, char c)
 		i++;
 		j++;
 	}
+	free(s);
 	return (p);
 }
 
@@ -68,13 +82,25 @@ char			**ft_split(char const *st, char c)
 	char	**p;
 	char	*s;
 
-	if (!st || !c)
+	if (!st)
 		return (NULL);
 	if ((s = ft_strtrim((char *)st, &c)) == NULL)
 		return (NULL);
-	j = ft_counts_words(s, c);
+	j = ft_counts_words(s, &c);
 	if ((p = (char **)malloc(sizeof(char *) * (j + 1))) == NULL)
 		return (NULL);
 	p[j] = NULL;
-	return (ft_add_to_array(s, p, c));
+	if (c == '\0')
+	{
+		p[0] = ft_strdup((char*)st);
+		free(s);
+		return (p);
+	}
+	if (ft_strlen(s) == 0)
+	{
+		p[0] = NULL;
+		free(s);
+		return (p);
+	}
+	return (ft_add_to_array(s, p, &c));
 }
